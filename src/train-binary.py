@@ -110,7 +110,7 @@ model.fit_generator(
     train_generator,
     samples_per_epoch=nb_train_samples,
     epochs=epochs,
-    validation_data=validation_generator)
+    ,validation_generator)
 target_dir = './models'
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
