@@ -16,11 +16,11 @@ def predict(file):
   array = model.predict(x)
   result = array[0]
   if result[0] > result[1]:
-    print("Predicted answer: Pizza")
-    answer = 'pizza'
+    print("Predicted answer: lab")
+    answer = 'lab'
   else:
-    print("Predicted answer: Poodle")
-    answer = 'poodle'
+    print("Predicted answer: notlab")
+    answer = 'notlab'
 
   return answer
 
@@ -29,24 +29,24 @@ tn = 0
 fp = 0
 fn = 0
 
-for i, ret in enumerate(os.walk('./test-data/poodle')):
+for i, ret in enumerate(os.walk('./test-data/notlab')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
-    print("Label: Poodle")
+    print("Label: notlab")
     result = predict(ret[0] + '/' + filename)
-    if result == "poodle":
+    if result == "notlab":
       tn += 1
     else:
       fp += 1
 
-for i, ret in enumerate(os.walk('./test-data/pizza')):
+for i, ret in enumerate(os.walk('./test-data/lab')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
-    print("Label: Pizza")
+    print("Label: lab")
     result = predict(ret[0] + '/' + filename)
-    if result == "pizza":
+    if result == "lab":
       tp += 1
     else:
       fn += 1
