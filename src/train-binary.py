@@ -105,16 +105,18 @@ Tensorboard log
 #log_dir = './tf-log/'
 #tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0)
 #cbks = [tb_cb]
-"""
-model.fit_generator(
-    train_generator,
-    samples_per_epoch=nb_train_samples,
-    epochs=epochs,
-    ,validation_generator)
 
-target_dir = './models'
+ model.fit_generator(training_generator,
+                       steps_per_epoch=62,
+                       validation_data=validation_generator, 
+                       epochs=10, 
+                       verbose=1,
+                       workers=1,
+                       use_multiprocessing=False,
+                       validation_steps=2)
+ target_dir = './models'
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
 model.save('models/model.h5')
 model.save_weights('models/weights.h5')
-"""
+
