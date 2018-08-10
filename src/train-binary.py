@@ -1,6 +1,5 @@
 """
 First, you need to collect training data and deploy it like this.
-
   ./data/
     train/
       pizza/
@@ -99,3 +98,23 @@ validation_generator = test_datagen.flow_from_directory(
     batch_size=batch_size,
     class_mode='categorical')
 
+"""
+Tensorboard log
+"""
+log_dir = './tf-log/'
+tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0)
+cbks = [tb_cb]
+
+model.fit_generator(
+    train_generator,
+    samples_per_epoch=nb_train_samples,
+    epochs=epochs,
+    validation_data=validation_generator,
+    callbacks=cbks,
+    validation_steps=nb_validation_samples)
+
+target_dir = './models'
+if not os.path.exists(target_dir):
+  os.mkdir(target_dir)
+model.save('models/model.h5')
+model.save_weights('models/weights.h5')
