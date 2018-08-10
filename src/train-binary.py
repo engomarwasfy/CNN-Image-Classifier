@@ -102,8 +102,8 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-log_dir = 'tf-log'
-tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+log_dir = './tf-log/'
+tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0)
 cbks = [tb_cb]
 
 model.fit_generator(
@@ -114,7 +114,7 @@ model.fit_generator(
     callbacks=cbks,
     validation_steps=nb_validation_samples)
 
-target_dir = 'models'
+target_dir = './models'
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
 model.save('models/model.h5')
