@@ -40,7 +40,7 @@ if argc > 1 and (argvs[1] == "--development" or argvs[1] == "-d"):
 if DEV:
   epochs = 4
 else:
-  epochs = 20
+  epochs = 2
 
 
 train_data_dir = './data/train'
