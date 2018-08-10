@@ -102,9 +102,9 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-log_dir = './tf-log/'
-tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0)
-cbks = [tb_cb]
+#log_dir = './tf-log/'
+#tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0)
+#cbks = [tb_cb]
 
 model.fit_generator(
     train_generator,
