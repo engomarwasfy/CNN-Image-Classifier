@@ -29,7 +29,7 @@ tn = 0
 fp = 0
 fn = 0
 
-for i, ret in enumerate(os.walk('./test-data/notlab')):
+for i, ret in enumerate(os.walk('./test_data/notlab')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
@@ -40,7 +40,7 @@ for i, ret in enumerate(os.walk('./test-data/notlab')):
     else:
       fp += 1
 
-for i, ret in enumerate(os.walk('./test-data/lab')):
+for i, ret in enumerate(os.walk('./test_data/lab')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
