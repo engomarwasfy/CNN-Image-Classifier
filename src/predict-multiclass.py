@@ -74,7 +74,7 @@ for i, ret in enumerate(os.walk('./test-data/motocycle')):
       motocycle_t += 1
     else:
       motocycle_f += 1
- for i, ret in enumerate(os.walk('./test-data/plane')):
+for i, ret in enumerate(os.walk('./test-data/plane')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
@@ -86,51 +86,51 @@ for i, ret in enumerate(os.walk('./test-data/motocycle')):
       plane_f += 1
  
 
-  for i, ret in enumerate(os.walk('./test-data/ship')):
-    for i, filename in enumerate(ret[2]):
-      if filename.startswith("."):
+for i, ret in enumerate(os.walk('./test-data/ship')):
+  for i, filename in enumerate(ret[2]):
+    if filename.startswith("."):
         continue
-      print("Label: ship")
-      result = predict(ret[0] + '/' + filename)
-     if result == 4:
+    print("Label: ship")
+    result = predict(ret[0] + '/' + filename)
+    if result == 4:
         ship_t += 1
-      else:
+    else:
         ship_f += 1
         
         
 for i, ret in enumerate(os.walk('./test-data/toktok')):
-    for i, filename in enumerate(ret[2]):
-      if filename.startswith("."):
+  for i, filename in enumerate(ret[2]):
+    if filename.startswith("."):
         continue
-      print("Label: toktok")
-      result = predict(ret[0] + '/' + filename)
-     if result == 5:
-        toktok_t += 1
-      else:
-        toktok_f += 1
+    print("Label: toktok")
+    result = predict(ret[0] + '/' + filename)
+    if result == 5:
+       toktok_t += 1
+    else:
+       toktok_f += 1
 
         
 for i, ret in enumerate(os.walk('./test-data/train')):
-    for i, filename in enumerate(ret[2]):
-      if filename.startswith("."):
+  for i, filename in enumerate(ret[2]):
+    if filename.startswith("."):
         continue
-      print("Label: train")
-      result = predict(ret[0] + '/' + filename)
-     if result == 6:
-        train_t += 1
-      else:
-        train_f += 1
+    print("Label: train")
+    result = predict(ret[0] + '/' + filename)
+    if result == 6:
+       train_t += 1
+    else:
+       train_f += 1
        
 for i, ret in enumerate(os.walk('./test-data/truck')):
-    for i, filename in enumerate(ret[2]):
-      if filename.startswith("."):
+  for i, filename in enumerate(ret[2]):
+    if filename.startswith("."):
         continue
-      print("Label: train")
-      result = predict(ret[0] + '/' + filename)
-     if result == 7:
-        truck_t += 1
-      else:
-        truck_f += 1
+    print("Label: train")
+    result = predict(ret[0] + '/' + filename)
+    if result == 7:
+      truck_t += 1
+    else:
+       truck_f += 1
  
 
 """
