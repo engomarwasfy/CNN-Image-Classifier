@@ -50,7 +50,7 @@ if argc > 1 and (argvs[1] == "--development" or argvs[1] == "-d"):
 if DEV:
   epochs = 2
 else:
-  epochs = 20
+  epochs = 4
 
 train_data_path = './data/train'
 validation_data_path = './data/validation'
@@ -112,8 +112,8 @@ validation_generator = test_datagen.flow_from_directory(
 """
 Tensorboard log
 """
-log_dir = './tf-log/'
-tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+log_dir = './tf-log1/'
+tb_cb = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=0)
 cbks = [tb_cb]
 
 model.fit_generator(
@@ -124,8 +124,8 @@ model.fit_generator(
     callbacks=cbks,
     validation_steps=validation_steps)
 
-target_dir = './models/'
+target_dir = './models1/'
 if not os.path.exists(target_dir):
   os.mkdir(target_dir)
-model.save('./models/model.h5')
-model.save_weights('./models/weights.h5')
+model.save('./models1/model.h5')
+model.save_weights('./models1/weights.h5')
