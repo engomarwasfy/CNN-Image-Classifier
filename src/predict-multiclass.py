@@ -17,11 +17,22 @@ def predict(file):
   result = array[0]
   answer = np.argmax(result)
   if answer == 0:
-    print("Label: Pizza")
+    print("Label: car")
   elif answer == 1:
-    print("Labels: Poodle")
+    print("Label: lab")
   elif answer == 2:
-    print("Label: Rose")
+    print("Label: motocycle")
+  elif answer == 3:
+    print("Label: plane")
+  elif answer == 4:
+    print("Label: ship")
+  elif answer == 5:
+    print("Label: toktok")
+  elif answer == 6:
+    print("Label: train")
+  elif answer == 7:
+    print("Label: truck")
+
 
   return answer
 
