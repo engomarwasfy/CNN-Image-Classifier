@@ -59,7 +59,7 @@ validation_data_path = './data/validation'
 Parameters
 """
 img_width, img_height = 150, 150
-batch_size = 32
+batch_size = 2
 samples_per_epoch = 1000
 validation_steps = 300
 nb_filters1 = 32
@@ -67,7 +67,7 @@ nb_filters2 = 64
 conv1_size = 3
 conv2_size = 2
 pool_size = 2
-classes_num = 3
+classes_num = 8
 lr = 0.0004
 
 model = Sequential()
