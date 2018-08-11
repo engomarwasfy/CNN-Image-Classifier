@@ -25,52 +25,130 @@ def predict(file):
 
   return answer
 
-pizza_t = 0
-pizza_f = 0
-poodle_t = 0
-poodle_f = 0
-rose_t = 0
-rose_f = 0
+car_t = 0
+car_f = 0
+lab_t = 0
+lab_f = 0
+motocycle_t = 0
+motocycle_f = 0
+plane_t=0
+plane_f=0
+ship_t=0
+ship_f=0
+toktok_t=0
+toktok_f=0
+train_t=0
+train_f=0
+truck_t=0
+truck_f=0
 
-for i, ret in enumerate(os.walk('./test-data/pizza')):
+for i, ret in enumerate(os.walk('./test-data/car')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
-    print("Label: Pizza")
+    print("Label: car")
     result = predict(ret[0] + '/' + filename)
     if result == 0:
-      pizza_t += 1
+      car_t += 1
     else:
-      pizza_f += 1
+      car_f += 1
 
-for i, ret in enumerate(os.walk('./test-data/poodle')):
+for i, ret in enumerate(os.walk('./test-data/lab')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
-    print("Label: Poodle")
+    print("Label: lab")
     result = predict(ret[0] + '/' + filename)
     if result == 1:
-      poodle_t += 1
+      lab_t += 1
     else:
-      poodle_f += 1
+      lab_f += 1
 
-for i, ret in enumerate(os.walk('./test-data/rose')):
+for i, ret in enumerate(os.walk('./test-data/motocycle')):
   for i, filename in enumerate(ret[2]):
     if filename.startswith("."):
       continue
-    print("Label: Rose")
+    print("Label: motocycle")
     result = predict(ret[0] + '/' + filename)
     if result == 2:
-      rose_t += 1
+      motocycle_t += 1
     else:
-      rose_f += 1
+      motocycle_f += 1
+ for i, ret in enumerate(os.walk('./test-data/plane')):
+  for i, filename in enumerate(ret[2]):
+    if filename.startswith("."):
+      continue
+    print("Label: plane")
+    result = predict(ret[0] + '/' + filename)
+    if result == 3:
+      plane_t += 1
+    else:
+      plane_f += 1
+ 
+
+  for i, ret in enumerate(os.walk('./test-data/ship')):
+    for i, filename in enumerate(ret[2]):
+      if filename.startswith("."):
+        continue
+      print("Label: ship")
+      result = predict(ret[0] + '/' + filename)
+     if result == 4:
+        ship_t += 1
+      else:
+        ship_f += 1
+        
+        
+for i, ret in enumerate(os.walk('./test-data/toktok')):
+    for i, filename in enumerate(ret[2]):
+      if filename.startswith("."):
+        continue
+      print("Label: toktok")
+      result = predict(ret[0] + '/' + filename)
+     if result == 5:
+        toktok_t += 1
+      else:
+        toktok_f += 1
+
+        
+for i, ret in enumerate(os.walk('./test-data/train')):
+    for i, filename in enumerate(ret[2]):
+      if filename.startswith("."):
+        continue
+      print("Label: train")
+      result = predict(ret[0] + '/' + filename)
+     if result == 6:
+        train_t += 1
+      else:
+        train_f += 1
+       
+for i, ret in enumerate(os.walk('./test-data/truck')):
+    for i, filename in enumerate(ret[2]):
+      if filename.startswith("."):
+        continue
+      print("Label: train")
+      result = predict(ret[0] + '/' + filename)
+     if result == 7:
+        truck_t += 1
+      else:
+        truck_f += 1
+ 
 
 """
 Check metrics
 """
-print("True Pizza: ", pizza_t)
-print("False Pizza: ", pizza_f)
-print("True Poodle: ", poodle_t)
-print("False Poodle: ", poodle_f)
-print("True Rose: ", rose_t)
-print("False Rose: ", rose_f)
+print("True car: ", car_t)
+print("False car: ", car_f)
+print("True lab: ", lab_t)
+print("False lab: ", lab_f)
+print("True motocycle ", motocycle_t)
+print("False motocycle: ", motocycle_f)
+print("True plane: ", plane_t)
+print("False plane: ", plane_f)
+print("True ship: ", ship_t)
+print("False ship: ", ship_f)
+print("True toktok: ", toktok_t)
+print("False toktok: ", toktok_f)
+print("True train: ", train_t)
+print("False train: ", train_f)
+print("True truck: ", truck_t)
+print("False truck: ", truck_f)
