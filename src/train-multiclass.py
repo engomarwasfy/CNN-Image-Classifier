@@ -48,9 +48,9 @@ if argc > 1 and (argvs[1] == "--development" or argvs[1] == "-d"):
   DEV = True
 
 if DEV:
-  epochs = 20
+  epochs = 999
 else:
-  epochs = 21
+  epochs = 1000
 
 train_data_path = './data/train'
 validation_data_path = './data/validation'
