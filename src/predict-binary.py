@@ -17,20 +17,18 @@ def predict(file):
   result = array[0]
   if result[0] > result[1]:
     print("Predicted answer: lab")
-    answer = 'lab'
+    return 'lab'
   else:
     print("Predicted answer: notlab")
-    answer = 'notlab'
-
-  return answer
+    return 'notlab'
 
 tp = 0
 tn = 0
 fp = 0
 fn = 0
 
-for i, ret in enumerate(os.walk('./test_data/notlab')):
-  for i, filename in enumerate(ret[2]):
+for ret in os.walk('./test_data/notlab'):
+  for filename in ret[2]:
     if filename.startswith("."):
       continue
     print("Label: notlab")
@@ -40,8 +38,8 @@ for i, ret in enumerate(os.walk('./test_data/notlab')):
     else:
       fp += 1
 
-for i, ret in enumerate(os.walk('./test_data/lab')):
-  for i, filename in enumerate(ret[2]):
+for ret in os.walk('./test_data/lab'):
+  for filename in ret[2]:
     if filename.startswith("."):
       continue
     print("Label: lab")
