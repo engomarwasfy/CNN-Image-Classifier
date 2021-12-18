@@ -21,6 +21,7 @@ First, you need to collect training data and deploy it like this.
         ...
 """
 
+
 import sys
 import os
 from keras.preprocessing.image import ImageDataGenerator
@@ -34,15 +35,10 @@ DEV = False
 argvs = sys.argv
 argc = len(argvs)
 
-if argc > 1 and (argvs[1] == "--development" or argvs[1] == "-d"):
+if argc > 1 and argvs[1] in ["--development", "-d"]:
   DEV = True
 
-if DEV:
-  epochs = 4
-else:
-  epochs = 2
-
-
+epochs = 4 if DEV else 2
 train_data_dir = './data/train'
 validation_data_dir = './data/validation'
 

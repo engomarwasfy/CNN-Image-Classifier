@@ -53,8 +53,8 @@ train_f=0
 truck_t=0
 truck_f=0
 
-for i, ret in enumerate(os.walk('./test-data/car')):
-  for i, filename in enumerate(ret[2]):
+for ret in os.walk('./test-data/car'):
+  for filename in ret[2]:
     if filename.startswith("."):
       continue
     print("Label: car")
@@ -64,8 +64,8 @@ for i, ret in enumerate(os.walk('./test-data/car')):
     else:
       car_f += 1
 
-for i, ret in enumerate(os.walk('./test-data/lab')):
-  for i, filename in enumerate(ret[2]):
+for ret in os.walk('./test-data/lab'):
+  for filename in ret[2]:
     if filename.startswith("."):
       continue
     print("Label: lab")
@@ -75,8 +75,8 @@ for i, ret in enumerate(os.walk('./test-data/lab')):
     else:
       lab_f += 1
 
-for i, ret in enumerate(os.walk('./test-data/motocycle')):
-  for i, filename in enumerate(ret[2]):
+for ret in os.walk('./test-data/motocycle'):
+  for filename in ret[2]:
     if filename.startswith("."):
       continue
     print("Label: motocycle")
@@ -85,8 +85,8 @@ for i, ret in enumerate(os.walk('./test-data/motocycle')):
       motocycle_t += 1
     else:
       motocycle_f += 1
-for i, ret in enumerate(os.walk('./test-data/plane')):
-  for i, filename in enumerate(ret[2]):
+for ret in os.walk('./test-data/plane'):
+  for filename in ret[2]:
     if filename.startswith("."):
       continue
     print("Label: plane")
@@ -95,10 +95,10 @@ for i, ret in enumerate(os.walk('./test-data/plane')):
       plane_t += 1
     else:
       plane_f += 1
- 
 
-for i, ret in enumerate(os.walk('./test-data/ship')):
-  for i, filename in enumerate(ret[2]):
+
+for ret in os.walk('./test-data/ship'):
+  for filename in ret[2]:
     if filename.startswith("."):
         continue
     print("Label: ship")
@@ -107,10 +107,10 @@ for i, ret in enumerate(os.walk('./test-data/ship')):
         ship_t += 1
     else:
         ship_f += 1
-        
-        
-for i, ret in enumerate(os.walk('./test-data/toktok')):
-  for i, filename in enumerate(ret[2]):
+
+
+for ret in os.walk('./test-data/toktok'):
+  for filename in ret[2]:
     if filename.startswith("."):
         continue
     print("Label: toktok")
@@ -120,9 +120,9 @@ for i, ret in enumerate(os.walk('./test-data/toktok')):
     else:
        toktok_f += 1
 
-        
-for i, ret in enumerate(os.walk('./test-data/train')):
-  for i, filename in enumerate(ret[2]):
+
+for ret in os.walk('./test-data/train'):
+  for filename in ret[2]:
     if filename.startswith("."):
         continue
     print("Label: train")
@@ -131,9 +131,9 @@ for i, ret in enumerate(os.walk('./test-data/train')):
        train_t += 1
     else:
        train_f += 1
-       
-for i, ret in enumerate(os.walk('./test-data/truck')):
-  for i, filename in enumerate(ret[2]):
+
+for ret in os.walk('./test-data/truck'):
+  for filename in ret[2]:
     if filename.startswith("."):
         continue
     print("Label: train")
@@ -142,7 +142,7 @@ for i, ret in enumerate(os.walk('./test-data/truck')):
       truck_t += 1
     else:
        truck_f += 1
- 
+
 
 """
 Check metrics

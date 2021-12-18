@@ -31,6 +31,7 @@ e.g. 3-classes classification Pizza, Poodle, Rose
         ...
 """
 
+
 import sys
 import os
 from keras.preprocessing.image import ImageDataGenerator
@@ -44,14 +45,10 @@ DEV = False
 argvs = sys.argv
 argc = len(argvs)
 
-if argc > 1 and (argvs[1] == "--development" or argvs[1] == "-d"):
+if argc > 1 and argvs[1] in ["--development", "-d"]:
   DEV = True
 
-if DEV:
-  epochs = 999
-else:
-  epochs = 1000
-
+epochs = 999 if DEV else 1000
 train_data_path = './data/train'
 validation_data_path = './data/validation'
 
